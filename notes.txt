@@ -1,0 +1,92 @@
+2do:
+    - squish dem bugs
+        - colonists gaining incompatible traits (from storybits?) (unconfirmed)
+        - services unavailable messages (already fixed?)
+        - water (terraforming) parameter not increasing (unconfirmed, unable to replicate)
+
+
+Notes:
+    - The original StoryBitTrigger function stops additional categories from being checked, so in a situation where a category is being checked but no StoryBits are activated, none of the other story
+     bits will be activated either. Potentially, you get in a situation where no story bits are ever activated. Updated to use the return value from the try function.
+        - wtf is this?!  helps with lag I suppose... maybe write a check in to the Try function just before sleeping... also "activated" seems to do nothing.
+        elseif msg == "StoryBitTick" and 0 <= #category.storybit_states then
+                                local sleep_time = const.StoryBits.TickDuration / 10 / #category.storybit_states
+                                CreateGameTimeThread(function()
+                                    category:TryActivateStoryBit(map_id, object, Clamp(sleep_time, 1, 10))
+                                end)
+
+    - training buildings aren't added to workplace label in parent dome, but are checked this way to see if they are in the current dome for the -10 performance penalty
+
+Steam Description:
+[b][i]Bug Fixes![/i][/b]
+👍 Bug Fixes
+
+This mod fixes bugs found in Surviving Mars revision 1010784.
+
+Fixed Bug List:
+👍 story bits are prevented from starting in certain situations
+👍 colonists in training buildings (schools, universities etc.) are incorrectly penalized for working outside their home dome
+
+Please take a second to rate this mod and leave a comment. Your feedback helps me produce better quality mods!
+
+If you're having any difficulties with the mod, or if you have suggestions for other bug fix ideas, or even other mods entirely, please contact me directly instead of reporting the mod.
+
+My steam guide on reading logs and asking for help:
+https://steamcommunity.com/sharedfiles/filedetails/?id=2492780667
+
+Places you can find me:
+
+[b][i]Places you can find me[/i][/b]
+👍 Discord: https://discord.gg/kTgYq9UjWx (#fizzle_fuze-mods)
+👍 Reddit: /u/Fizzle_Fuze (/r/SurvivingMars/)
+👍 Email: mods@fizzlefuze.com
+👍 Chilling in an RC Safari
+
+If you don't enjoy this mod, please let me know why in a constructive and positive manner.
+
+Thanks for your support and feedback.
+Have a good game!
+FF
+
+[i]License:[/i]
+Copyright (C) 2022 Fizzle Fuze Enterprises (mods@fizzlefuze.com)
+
+You should have received a copy of the GNU Affero General Public License along with this program.
+If not, see https://www.gnu.org/licenses/
+
+
+Paradox Description:
+Bug Fixes!
+✔ Bug Fixes
+
+This mod fixes bugs found in Surviving Mars revision 1010784.
+
+Fixed Bug List:
+✔ story bits are prevented from starting in certain situations
+✔ colonists in training buildings (schools, universities etc.) are incorrectly penalized for working outside their home dome
+
+Please take a second to rate this mod and leave a comment. Your feedback helps me produce better quality mods!
+
+If you're having any difficulties with the mod, or if you have suggestions for other bug fix ideas, or even other mods entirely, please contact me directly instead of reporting the mod.
+
+My steam guide on reading logs and asking for help:
+https://steamcommunity.com/sharedfiles/filedetails/?id=2492780667
+
+Places you can find me:
+✔ Discord: https://discord.gg/kTgYq9UjWx (#fizzle_fuze-mods)
+✔ Reddit: /u/Fizzle_Fuze (/r/SurvivingMars/)
+✔ Email: mods@fizzlefuze.com
+✔ Chilling in an RC Safari
+
+If you don't enjoy this mod, please let me know why in a constructive and positive manner!
+
+Thanks for your support and feedback.
+Have a good game!
+FF
+
+License:
+
+Copyright (C) 2022 Fizzle Fuze Enterprises (mods@fizzlefuze.com)
+
+You should have received a copy of the GNU Affero General Public License along with this program.
+If not, see https://www.gnu.org/licenses/
