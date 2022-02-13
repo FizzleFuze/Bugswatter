@@ -2,7 +2,7 @@ return PlaceObj('ModDef', {
 	'title', "Bugswatter",
 	'description', "",
 	'image', "swatter.jpg",
-	'last_changes', "",
+	'last_changes', "https://github.com/FizzleFuze/Bugswatter/blob/master/changelog.md",
 	'ignore_files', {
 		"*.git/*",
 		"*.svn/*",
