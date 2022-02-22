@@ -1,0 +1,23 @@
+2do:
+    -> Do one step at a time <-
+    [Plan, Create, Test] Task 1 1
+        [Plan, Create, Test] Sub-Task 1
+
+2do:
+    - squish dem bugs
+        - colonists gaining incompatible traits (from storybits?) (unconfirmed)
+        - services unavailable messages (already fixed?)
+        - water (terraforming) parameter not increasing (unconfirmed, unable to replicate)
+
+
+Notes:
+    - The original StoryBitTrigger function stops additional categories from being checked, so in a situation where a category is being checked but no StoryBits are activated, none of the other story
+     bits will be activated either. Potentially, you get in a situation where no story bits are ever activated. Updated to use the return value from the try function.
+        - wtf is this?!  helps with lag I suppose... maybe write a check in to the Try function just before sleeping... also "activated" seems to do nothing.
+        elseif msg == "StoryBitTick" and 0 <= #category.storybit_states then
+                                local sleep_time = const.StoryBits.TickDuration / 10 / #category.storybit_states
+                                CreateGameTimeThread(function()
+                                    category:TryActivateStoryBit(map_id, object, Clamp(sleep_time, 1, 10))
+                                end)
+
+    - training buildings aren't added to workplace label in parent dome, but are checked this way to see if they are in the current dome for the -10 performance penalty
