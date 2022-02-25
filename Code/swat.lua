@@ -5,6 +5,9 @@ local function Log(...)
 end
 
 --fix for incorrect work performance penalty when training in home dome
+
+-- removed due to paradox fix
+--[[
 local ChangeWorkplacePerformance = Colonist.ChangeWorkplacePerformance
 function Colonist:ChangeWorkplacePerformance ()
     ChangeWorkplacePerformance(self)
@@ -17,6 +20,7 @@ function Colonist:ChangeWorkplacePerformance ()
     end
 
 end
+--]]
 
 --Fix Story Bits Trigger: try every category, not just the first one that RNG selects
 local StoryBitTriggerOrig = StoryBitTrigger
